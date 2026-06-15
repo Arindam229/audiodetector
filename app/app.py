@@ -403,7 +403,7 @@ if uploaded_file is not None and model_ready:
 # ---------------------------------------------------------------------------
 # Model Analytics Overlay
 # ---------------------------------------------------------------------------
-with st.expander("\U0001F4CA  Model Analytics & Performance Report", expanded=False):
+with st.expander("Model Analytics & Performance Report", expanded=False):
     report = load_metrics_report()
     if report is None:
         st.info("No metrics report found yet. Run `python -m src.models.train` to generate one.")
