@@ -19,7 +19,7 @@ the **FoR (Fake-or-Real) `for-norm`** corpus.
 
 **Downloading the Data:**
 Because the raw audio files are very large, they are not included in this repository. To replicate the training pipeline or run batch testing, please download the dataset from Kaggle:
-1. Download the **Fake-or-Real (FoR) norm** dataset from Kaggle.
+1. Download the **Fake-or-Real (FoR) norm** dataset from [Kaggle](https://www.kaggle.com/datasets/mohammedabdeldayem/the-fake-or-real-dataset).
 2. Extract the downloaded archive into the `data/raw/` directory.
 
 **Source layout** (read-only, never modified):
