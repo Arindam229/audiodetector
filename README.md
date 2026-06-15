@@ -1,7 +1,7 @@
-# Forensic Audio Deepfake Detector
+# VoiceShield: Audio Deepfake Detector
 
 A production-grade pipeline and dashboard for detecting AI-generated
-("deepfake") speech using classical acoustic forensics (LFCC + delta +
+("deepfake") speech using classical acoustic analysis (LFCC + delta +
 delta-delta cepstral biomarkers) and a CNN-LSTM binary classifier, trained on
 the **FoR (Fake-or-Real) `for-norm`** corpus.
 
@@ -141,7 +141,7 @@ A dark, Aceternity/shadcn-inspired Streamlit app:
 
 - **Animated grid background** with a violet glow (pure CSS).
 - **Drag-and-drop** `.wav` / `.mp3` upload with a built-in audio player.
-- **Forensic Inference Readout**: a high-contrast `GENUINE (HUMAN)` /
+- **Inference Readout**: a high-contrast `GENUINE (HUMAN)` /
   `DEEPFAKE (AI-GENERATED)` badge, animated confidence gauges for both
   classes, and a heatmap of the extracted LFCC + Δ + ΔΔ feature map.
 - **Model Analytics** expander: live metrics pills (accuracy, F1, EER, AUC,

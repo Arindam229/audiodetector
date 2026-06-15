@@ -1,4 +1,4 @@
-"""Forensic audio preprocessing pipeline.
+"""Audio preprocessing pipeline.
 
 Crawls the FoR (Fake-or-Real) `for-norm` dataset:
 

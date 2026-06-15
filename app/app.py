@@ -1,4 +1,4 @@
-"""Forensic Audio Deepfake Detector -- Streamlit dashboard.
+"""VoiceShield: Audio Deepfake Detector -- Streamlit dashboard.
 
 A dark, Aceternity/shadcn-inspired UI for the CNN-LSTM deepfake audio
 detector. Run with:
@@ -9,7 +9,7 @@ Sections
 --------
 1. Hero header with animated grid background.
 2. Drag-and-drop audio upload + native audio player.
-3. Forensic inference readout: classification badge + animated confidence
+3. Inference readout: classification badge + animated confidence
    gauges + LFCC feature heatmap.
 4. Model analytics overlay: ROC/EER curve, confusion matrix, and the full
    verification metrics report produced by `src/models/train.py`.
@@ -47,7 +47,7 @@ from src.models.model import CNNLSTMDetector
 # Page setup
 # ---------------------------------------------------------------------------
 st.set_page_config(
-    page_title="Forensic Audio Deepfake Detector",
+    page_title="VoiceShield: Audio Deepfake Detector",
     page_icon="\U0001F6E1️",
     layout="wide",
     initial_sidebar_state="collapsed",
@@ -351,9 +351,9 @@ def render_feature_heatmap(features: np.ndarray) -> None:
 inject_css()
 render_background()
 
-st.markdown('<div class="gradient-title">Forensic Audio Deepfake Detector</div>', unsafe_allow_html=True)
+st.markdown('<div class="gradient-title">VoiceShield: Audio Deepfake Detector</div>', unsafe_allow_html=True)
 st.markdown(
-    '<p class="subtitle">CNN-LSTM acoustic forensics over '
+    '<p class="subtitle">CNN-LSTM acoustic analysis over '
     '<span class="accent">LFCC + Δ + ΔΔ</span> biomarkers '
     '&mdash; trained on the FoR (Fake-or-Real) corpus</p>',
     unsafe_allow_html=True,
@@ -382,14 +382,14 @@ if uploaded_file is not None and model_ready:
         st.markdown('<div class="card-title">Audio Playback</div>', unsafe_allow_html=True)
         st.audio(audio_bytes)
 
-    with st.spinner("Running forensic inference…"):
+    with st.spinner("Running model inference…"):
         features, prob_fake, threshold = run_inference(audio_bytes, suffix)
 
     prob_genuine = 1.0 - prob_fake
     predicted_label = 1 if prob_fake >= threshold else 0
 
     with st.container(border=True):
-        st.markdown('<div class="card-title">Forensic Inference Readout</div>', unsafe_allow_html=True)
+        st.markdown('<div class="card-title">Inference Readout</div>', unsafe_allow_html=True)
         render_verdict_badge(predicted_label, prob_fake)
 
         gauge_col1, gauge_col2 = st.columns(2)

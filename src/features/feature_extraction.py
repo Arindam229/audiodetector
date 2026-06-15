@@ -1,4 +1,4 @@
-"""Forensic acoustic feature extraction.
+"""Acoustic feature extraction.
 
 This module is the single source of truth for turning a raw waveform into
 the fixed-shape tensor consumed by the CNN-LSTM detector. It is imported by

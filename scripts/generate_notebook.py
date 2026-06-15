@@ -1,5 +1,5 @@
 """Generate `pipeline.ipynb`, a reproducible walkthrough of the full pipeline:
-dataset ingestion -> forensic feature extraction -> model training -> metrics.
+dataset ingestion -> feature extraction -> model training -> metrics.
 
 This script writes raw nbformat-4 JSON directly (no `nbformat` dependency).
 Run once from the project root:
@@ -25,12 +25,12 @@ def code(*lines: str) -> dict:
 cells = []
 
 cells.append(md(
-    "# Forensic Audio Deepfake Detection -- End-to-End Pipeline",
+    "# VoiceShield: Audio Deepfake Detection -- End-to-End Pipeline",
     "",
     "This notebook walks through the complete pipeline used by this project:",
     "",
     "1. **Dataset ingestion** -- crawl the FoR (`for-norm`) corpus and inspect class balance.",
-    "2. **Forensic feature extraction** -- LFCC + delta + delta-delta biomarkers.",
+    "2. **Feature extraction** -- LFCC + delta + delta-delta biomarkers.",
     "3. **Model architecture** -- CNN-LSTM binary classifier.",
     "4. **Training** -- automated hyperparameter search against validation thresholds.",
     "5. **Metrics** -- accuracy, F1, per-class accuracy, confusion matrix, ROC/EER.",
@@ -70,7 +70,7 @@ cells.append(code(
     "    print(f'{split:>10}: total={len(items):6d}  genuine={n_real:6d}  deepfake={n_fake:6d}')",
 ))
 
-cells.append(md("## 2. Forensic feature extraction", "",
+cells.append(md("## 2. Feature extraction", "",
                  "Every clip is resampled to 16 kHz mono, trimmed/padded to "
                  f"4 seconds, and converted into a "
                  "`(FEATURE_DIM, NUM_FRAMES)` = `(60, 401)` tensor of "
