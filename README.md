@@ -1,9 +1,16 @@
-# VoiceShield: Audio Deepfake Detector
+<div align="center">
+  <h1>VoiceShield: Audio Deepfake Detector</h1>
+  <p><b>A production-grade pipeline and dashboard for detecting AI-generated ("deepfake") speech.</b></p>
 
-A production-grade pipeline and dashboard for detecting AI-generated
-("deepfake") speech using classical acoustic analysis (LFCC + delta +
-delta-delta cepstral biomarkers) and a CNN-LSTM binary classifier, trained on
-the **FoR (Fake-or-Real) `for-norm`** corpus.
+  [![Live Demo](https://img.shields.io/badge/Live%20Demo-Streamlit-FF4B4B?style=for-the-badge&logo=streamlit)](https://audiodetector.streamlit.app/)
+  [![Video Demo](https://img.shields.io/badge/Video%20Demo-YouTube-FF0000?style=for-the-badge&logo=youtube)](https://www.youtube.com/watch?v=XD5wxQSQwBU)
+  [![Dataset](https://img.shields.io/badge/Dataset-Kaggle-20BEFF?style=for-the-badge&logo=kaggle)](https://www.kaggle.com/datasets/mohammedabdeldayem/the-fake-or-real-dataset)
+  [![Performance Report](https://img.shields.io/badge/Report-PDF-EC1C24?style=for-the-badge)](models/performance_report.pdf)
+</div>
+
+<br/>
+
+VoiceShield uses classical acoustic analysis (LFCC + delta + delta-delta cepstral biomarkers) and a CNN-LSTM binary classifier, trained on the **FoR (Fake-or-Real) `for-norm`** corpus.
 
 ```
 ┌──────────────┐   ┌────────────────────┐   ┌───────────────────┐   ┌────────────────────┐
@@ -12,6 +19,19 @@ the **FoR (Fake-or-Real) `for-norm`** corpus.
 │ (.wav corpus) │  │ → data/processed/*  │  │ → models/detector.pt│ │ predict.py (CLI)    │
 └──────────────┘   └────────────────────┘   └───────────────────┘   └────────────────────┘
 ```
+
+---
+
+## Quick Links to Project Assets
+
+- [**Live Web Dashboard**](https://audiodetector.streamlit.app/): Try out the live application.
+- [**Video Demonstration**](https://www.youtube.com/watch?v=XD5wxQSQwBU): Watch a walkthrough on YouTube.
+- [**Jupyter Notebook Pipeline**](pipeline.ipynb): Full running code for end-to-end processing.
+- [**Trained Model**](models/detector.pt): The trained CNN-LSTM binary classifier.
+- [**Prediction Script**](predict.py): Python script to test the model on new audio samples.
+- [**Performance Report**](models/performance_report.pdf): PDF report including accuracy, EER, F1 score, ROC curve, and confusion matrix.
+- [**Preprocessing & Model Details**](#2-acoustic-feature-engineering-srcfeaturesfeature_extractionpy): Description of preprocessing, feature extraction, and architecture.
+- [**Project Documentation**](README.md): This README file covering description, methodology, pipeline, and metrics.
 
 ---
 
